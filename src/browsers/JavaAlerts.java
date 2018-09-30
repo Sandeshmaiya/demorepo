@@ -19,6 +19,8 @@ public class JavaAlerts {
 		//driver.switchTo().alert().dismiss();
 		
 		
+		
+		
 
 	}
 

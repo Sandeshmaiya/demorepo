@@ -5,6 +5,7 @@ import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,7 +31,7 @@ public class Synchronization {
 		
 		//ExplictWait
 		
-		WebDriverWait d = new WebDriverWait(driver, 5);
+		WebDriverWait d = (WebDriverWait) new WebDriverWait(driver, 5).ignoring(StaleElementReferenceException.class);
 		d.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
 		
 		// Thread
